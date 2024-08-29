@@ -6,22 +6,22 @@
 /*   By: sacharai <sacharai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 15:43:34 by sacharai          #+#    #+#             */
-/*   Updated: 2024/08/28 06:52:40 by sacharai         ###   ########.fr       */
+/*   Updated: 2024/08/29 10:14:28 by sacharai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.hpp"
 
-bool isPhoneNumberValid(const std::string& phoneNumber) {
-    for (std::string::const_iterator i = phoneNumber.begin(); i != phoneNumber.end(); ++i) {
-        if (!std::isdigit(*i)) {
+bool isPhoneNumberValid(std::string phoneNumber) {
+    for (size_t i = 0; i < phoneNumber.length(); ++i) {
+        if (!isdigit(phoneNumber[i])) {
             return false;
         }
     }
     return true;
 }
 
-std::string truncateWord(const std::string& word, size_t length) {
+std::string truncateWord(std::string word, size_t length) {
     return word.substr(0, length);
 }
 
