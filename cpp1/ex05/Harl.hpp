@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sacharai <sacharai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 11:21:31 by sacharai          #+#    #+#             */
-/*   Updated: 2024/09/30 10:23:31 by sacharai         ###   ########.fr       */
+/*   Created: 2024/09/30 00:33:42 by sacharai          #+#    #+#             */
+/*   Updated: 2024/09/30 14:41:44 by sacharai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int main(){
-    Zombie  name = Zombie("Foo");
-    name.announce();
-    Zombie *ptr = newZombie("newZombie");
-    ptr->announce();
-    randomChump("randomChump");
-    delete ptr;
-}
+#include <string>
+
+class Harl {
+private:
+    void debug(void);
+    void info(void);
+    void warning(void);
+    void error(void);
+    
+    typedef void (Harl::*ComplaintPtr)(void);
+    ComplaintPtr complaintFunctions[4];
+    std::string levels[4];
+
+public:
+    Harl();
+    void complain(std::string level);
+};
+
+#endif

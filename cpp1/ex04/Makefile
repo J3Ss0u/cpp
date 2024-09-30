@@ -1,10 +1,9 @@
-
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
+SRC = main.cpp myReplace.cpp
+HEADERS = myReplace.hpp
 
-TARGET = violence
+TARGET = replace
 
 all: $(TARGET)
 

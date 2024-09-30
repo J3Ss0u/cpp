@@ -1,10 +1,9 @@
-
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
+SRC = main.cpp Harl.cpp
+HEADERS = Harl.hpp
 
-TARGET = violence
+TARGET = Harl
 
 all: $(TARGET)
 
